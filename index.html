@@ -212,52 +212,73 @@
 
 
 <head>
+    <meta charset="UTF-8">
     <title>People and Logos</title>
     <style>
-        /* Style for the container */
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        /* Style for the image/logo */
-        .person-logo {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Style for the button */
-        .youtube-button {
-            display: inline-block;
-            padding: 10px 20px;
-            margin-top: 10px;
-            border: 2px solid #000;
-            border-radius: 20px;
-            text-decoration: none;
-            color: #a5a5a5;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+      }
+  
+      .centered-box {
+        width: 60%;
+        margin: 100px auto;
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        text-align: center;
+      }
+  
+      .person {
+        display: inline-block;
+        margin: 20px;
+      }
+  
+      .person img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+      }
+  
+      .person button {
+        padding: 10px 20px;
+        border: none;
+        background-color: #ff0000;
+        color: white;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+  
+      .person button:hover {
+        background-color: #cc0000;
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <!-- Person 1 -->
-        <div class="person">
-            <img src="img/Logo Neu.png" alt="Logo Neu.png" class="person-logo">
-            <a href="https://www.youtube.com/@Kulier_TV" class="youtube-button">Gründer: Kulier</a>
-        </div>
-
-        <!-- Person 2 -->
-        <div class="person">
-            <img src="img/BOmba.png" alt="Person 2" class="BOmba.png">
-            <a href="https://www.youtube.com/@BomBa_MC" class="youtube-button">Mitglied: BomBa MC</a>
-        </div>
-
-        <!-- Add more people as needed -->
-
+  </head>
+  <body>
+  
+  <div class="centered-box">
+    <div class="person">
+      <img src="img/BOmba.png" alt="Person 1 Logo">
+      <br>
+      <button onclick="window.location.href='www.youtube.com/@Kulier_TV'">Visit Channel</button>
     </div>
-</body>
-</html>
+  
+    <div class="person">
+      <img src="link_to_person2_logo.png" alt="Person 2 Logo">
+      <br>
+      <button onclick="window.location.href='www.youtube.com/@BomBa_MC'">Visit Channel</button>
+    </div>
+  
+    <!-- Add more people as needed -->
+  
+  </div>
+  
+  </body>
+  </html>
+  

@@ -1,0 +1,63 @@
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling with Background Image */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('img/background.png'); /* Set your background image here */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Profile Container */
+.profile-container {
+    text-align: center;
+
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Profile Picture Styling */
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Channel Name Logo Styling */
+.channel-name {
+    width: 200px; /* Adjust width as needed */
+    margin-bottom: 20px;
+}
+
+/* Social Media Grid Styling */
+.social-media-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.social-media-icon img {
+    width: 80px; /* Set icon size */
+    height: 80px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.social-media-icon img:hover {
+    transform: scale(1.1); /* Hover effect to enlarge */
+}

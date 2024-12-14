@@ -93,52 +93,60 @@
         /* Media Query for Mobile Devices */
         @media (max-width: 768px) {
             body {
-                flex-direction: column;
                 height: auto;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                overflow-y: auto; 
             }
 
             .main-container {
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 width: 100%;
-                max-width: none;
                 padding: 10px;
             }
 
             .left-column, .right-column {
-                margin-top: 20px;
-                margin-bottom: 20px;
+                margin: 0;
+                align-items: center;
             }
 
             .left-column img:first-child, 
             .left-column img:last-child, 
             .right-column img:first-child {
+                max-width: 80%; 
                 position: relative;
                 left: 0;
-                max-width: 200px; /* Reduce size for smaller screens */
+                margin-bottom: 20px;
             }
 
             .center-logo {
-                width: 300px;
-                height: 300px;
-                margin: 20px auto;
+                width: 90%;
+                max-width: 300px;
+                height: auto;
+                margin: 20px 0;
             }
 
             .center-logo img {
-                width: 320px; 
-                height: 320px; 
+                width: 100%; 
+                height: auto; 
             }
 
             .social-icons {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
                 justify-items: center;
-                margin-top: 10px;
+                margin: 20px 0;
             }
 
             .social-icons img {
-                left: 0;
                 width: 60px; 
                 height: 60px; 
+                left: 0;
             }
         }
     </style>

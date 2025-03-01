@@ -6,15 +6,15 @@
     <title>dingus</title>
     <link rel="icon" href="img/logo.png" />
     <style>
-        body {
-            display: flex;
-            margin: 0;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            position: relative;
-            background: #2b2b2b;
-            overflow: hidden;
-        }
+    body {
+        display: flex;
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        position: relative;
+        background: linear-gradient(135deg, #080808, #202020, #272727);
+        overflow: hidden;
+    }
 
         .glowing-circle {
             position: absolute;
@@ -171,7 +171,7 @@
             document.body.appendChild(circle);
         }
 
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 35; i++) {
             createGlowingCircle();
         }
     </script>

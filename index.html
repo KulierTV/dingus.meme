@@ -2,19 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="img/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dingus.meme</title>
+    <title>Social Media Channels</title>
     <style>
-        body {
-            display: flex;
-            margin: 0;
-            height: 100vh;
-            font-family: Arial, sans-serif;
-            position: relative;
-            background: linear-gradient(to right, #141E30, #243B55);
-            overflow: hidden;
+
+body {
+        display: flex;
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        position: relative;
+        background: #2b2b2b;
+        overflow: hidden;
+    }
+
+    .glowing-circle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1), 0 0 60px rgba(255, 255, 255, 0.05);
         }
+        to {
+            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.3), 0 0 120px rgba(255, 255, 255, 0.2);
+        }
+    }
+
         .channel {
             flex: 1;
             position: relative;
@@ -25,25 +47,7 @@
             align-items: center;
             justify-content: center;
         }
-        .channel .background-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-size: cover;
-            background-position: center;
-            filter: blur(5px);
-            transform: scale(1.1);
-            z-index: 1;
-            opacity: 0.7;
-        }
-        .channel.left .background-image {
-            background-image: url('img/backgroundk.png');
-        }
-        .channel.right .background-image {
-            background-image: url('img/background.png');
-        }
+
         .channel::after {
             content: "";
             position: absolute;
@@ -51,7 +55,6 @@
             bottom: 0;
             width: 100%;
             pointer-events: none;
-            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1) 45%, rgba(0, 0, 0, 0.1) 55%, rgba(0, 0, 0, 0.7));
             z-index: 2;
         }
         .content {
@@ -70,12 +73,12 @@
             transform: scale(1.05);
         }
 
-        /* Pushable Button Styles */
         .pushable {
-            background: hsl(196, 25%, 41%);
+            background: hsl(0, 0%, 0%);
             border-radius: 12px;
             border: none;
             padding: 0;
+            box-shadow: 0 8px 15px rgba(71, 71, 71, 0.582);
             cursor: pointer;
             outline-offset: 4px;
             overflow: hidden;
@@ -83,21 +86,20 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
 
-        /* Front button appearance */
+
         .front {
             display: block;
             padding: 12px 42px;
             border-radius: 16px;
             font-size: 1.25rem;
-            background: hsl(195, 13%, 49%);
-            color: white;
+            background: hsl(0, 0%, 38%);
+            color: rgb(255, 255, 255);
             transform: translateY(-6px);
             transition: transform 0.2s ease, box-shadow 0.2s ease;
             position: relative;
             z-index: 2;
         }
 
-        /* Shine effect */
         .pushable::before {
             content: "";
             position: absolute;
@@ -105,29 +107,27 @@
             left: -50%;
             width: 200%;
             height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            background: linear-gradient(120deg, transparent, rgba(188, 196, 201, 0.6), transparent);
             transform: skewX(-30deg);
             transition: transform 0.3s ease;
             z-index: 1;
         }
 
-        /* Activate shine on click */
+
         .pushable.clicked::before {
             animation: shine 0.6s forwards;
         }
 
-        /* Button color change on click */
+
         .pushable.clicked .front {
             background-color: #747F8D;
         }
-
-        /* Darken on click */
         .pushable:active .front {
             transform: translateY(-2px);
-            background-color: #5f6a77;
+            background-color: #858585;
         }
 
-        /* Shine animation */
+
         @keyframes shine {
             0% { left: -50%; }
             100% { left: 100%; }
@@ -135,12 +135,13 @@
     </style>
 </head>
 <body>
+    <div class="glowing-circle"></div>
     <div class="channel left">
         <div class="background-image"></div>
         <div class="content">
             <img src="img/logo.png" alt="Kulier Profile Picture" class="profile-pic">
             <h2>Kulier</h2>
-            <button class="pushable" onclick="handleClick(this, 'https://kulier.lol')">
+            <button class="pushable" onclick="handleClick(this, 'https://dingus.meme/kulier')">
                 <span class="front">Visit Kulier</span>
             </button>
         </div>
@@ -148,20 +149,16 @@
     <div class="channel right">
         <div class="background-image"></div>
         <div class="content">
-            <img src="elek_img/logo.png" alt="Elek Profile Picture" class="profile-pic">
-            <h2>elek</h2>
+            <img src="Bomba seite/img/logo.png" alt="Elek Profile Picture" class="profile-pic">
+            <h2>Elek</h2>
             <button class="pushable" onclick="handleClick(this, 'https://dingus.meme/elek')">
-                <span class="front">Visit elek</span>
+                <span class="front">Visit Elek</span>
             </button>
         </div>
     </div>
-
     <script>
         function handleClick(button, url) {
-            // Add 'clicked' class to trigger the shine animation and color change
             button.classList.add('clicked');
-
-            // Redirect after a short delay to allow the animation to play
             setTimeout(() => {
                 window.location.href = url;
             }, 600);

@@ -3,39 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Social Media Channels</title>
+    <title>dingus</title>
+    <link rel="icon" href="img/logo.png" />
     <style>
-
-body {
-        display: flex;
-        margin: 0;
-        height: 100vh;
-        font-family: Arial, sans-serif;
-        position: relative;
-        background: #2b2b2b;
-        overflow: hidden;
-    }
-
-    .glowing-circle {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 300px;
-        height: 300px;
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        animation: glow 2s infinite alternate;
-    }
-
-    @keyframes glow {
-        from {
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1), 0 0 60px rgba(255, 255, 255, 0.05);
+        body {
+            display: flex;
+            margin: 0;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            position: relative;
+            background: #2b2b2b;
+            overflow: hidden;
         }
-        to {
-            box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.3), 0 0 120px rgba(255, 255, 255, 0.2);
+
+        .glowing-circle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: glow 2s infinite alternate;
         }
-    }
+
+        @keyframes glow {
+            from {
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1), 0 0 60px rgba(255, 255, 255, 0.05);
+            }
+            to {
+                background: rgba(255, 255, 255, 0.4);
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.3), 0 0 120px rgba(255, 255, 255, 0.2);
+            }
+        }
 
         .channel {
             flex: 1;
@@ -57,11 +54,13 @@ body {
             pointer-events: none;
             z-index: 2;
         }
+
         .content {
             position: relative;
             z-index: 3;
             text-align: center;
         }
+
         img.profile-pic {
             border-radius: 50%;
             width: 180px;
@@ -69,6 +68,7 @@ body {
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
             transition: transform 0.3s ease;
         }
+
         img.profile-pic:hover {
             transform: scale(1.05);
         }
@@ -85,7 +85,6 @@ body {
             position: relative;
             transition: background-color 0.3s ease, transform 0.2s ease;
         }
-
 
         .front {
             display: block;
@@ -113,20 +112,18 @@ body {
             z-index: 1;
         }
 
-
         .pushable.clicked::before {
             animation: shine 0.6s forwards;
         }
 
-
         .pushable.clicked .front {
             background-color: #747F8D;
         }
+
         .pushable:active .front {
             transform: translateY(-2px);
             background-color: #858585;
         }
-
 
         @keyframes shine {
             0% { left: -50%; }
@@ -135,7 +132,6 @@ body {
     </style>
 </head>
 <body>
-    <div class="glowing-circle"></div>
     <div class="channel left">
         <div class="background-image"></div>
         <div class="content">
@@ -149,7 +145,7 @@ body {
     <div class="channel right">
         <div class="background-image"></div>
         <div class="content">
-            <img src="Bomba seite/img/logo.png" alt="Elek Profile Picture" class="profile-pic">
+            <img src="elek_img/logo.png" alt="Elek Profile Picture" class="profile-pic">
             <h2>Elek</h2>
             <button class="pushable" onclick="handleClick(this, 'https://dingus.meme/elek')">
                 <span class="front">Visit Elek</span>
@@ -162,6 +158,21 @@ body {
             setTimeout(() => {
                 window.location.href = url;
             }, 600);
+        }
+
+        function createGlowingCircle() {
+            const circle = document.createElement('div');
+            circle.classList.add('glowing-circle');
+            const size = Math.random() * 200 + 100; 
+            circle.style.width = `${size}px`;
+            circle.style.height = `${size}px`;
+            circle.style.top = `${Math.random() * 100}vh`;
+            circle.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(circle);
+        }
+
+        for (let i = 0; i < 10; i++) {
+            createGlowingCircle();
         }
     </script>
 </body>

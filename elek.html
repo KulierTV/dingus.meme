@@ -14,7 +14,7 @@
             height: 100vh;
             background: linear-gradient(45deg, rgba(0,0,0,1) 20%, rgb(187, 0, 0) 50%, rgba(0,0,0,1) 80%);
             background-size: 200% 200%;
-            animation: gradientMove 4s linear infinite;
+            animation: gradientMove 8s linear infinite;
             overflow: hidden;
         }
 
@@ -22,10 +22,14 @@
             0% {
                 background-position: 0% 0%;
             }
-            100% {
+            50% {
                 background-position: 100% 100%;
             }
+            100% {
+                background-position: 0% 0%;
+            }
         }
+
         .main-container {
             border-radius: 20px;
             padding: 20px;

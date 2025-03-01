@@ -11,9 +11,19 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: black; /* Fallback color */
-            background: linear-gradient(45deg, rgba(0,0,0,1) 20%, rgba(255,0,0,1) 50%, rgba(0,0,0,1) 80%);
+            background: linear-gradient(45deg, rgba(0,0,0,1) 20%, rgb(187, 0, 0) 50%, rgba(0,0,0,1) 80%);
+            background-size: 200% 200%;
+            animation: gradientMove 5s linear infinite;
             overflow: hidden;
+        }
+
+        @keyframes gradientMove {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
         }
 
         .main-container {
@@ -43,7 +53,7 @@
             max-width: 250px; 
             margin-bottom: 20px;
             position: relative;
-            left: 20px; /* Move images slightly to the right */
+            left: 20px;
         }
 
         .center-logo {

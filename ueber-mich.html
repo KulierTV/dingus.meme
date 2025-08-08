@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>TEST 1</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+        }
+        img {
+            display: block;
+        }
+        header {
+            position: fixed;
+            margin-left: 8.5px;
+            margin-top: 155px;
+            width: 95.8%;
+            scale: 90%;
+            background: #000000b6;
+            color: #ff0000;
+            padding: 1rem 2rem;
+            display: flex;
+            border-radius: 1.5rem;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+            transform: translateY(-80%);
+        }
+
+        header:hover {
+            transform: translateY(1px);
+        }
+
+        nav a {
+            top: auto;
+            margin-left: 1rem;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 2px;
+            width: 100%;
+            background: #d8d8d8be;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e95959;
+            text-shadow: 0 0 6px #ad4500, 0 0 12px #530000;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/elek.png" alt="Elek Logo" style="width: 3%; height: 3%; scale: 180%;">
+            <nav>
+                <a href="/">start</a>
+                <a href="/ueber-mich">über mich</a>
+                <a href="https://www.dingus.meme">zurück</a>
+            </nav>
+    </header>
+<img src="img/ueber.webp" alt="Background Image"/>
+</body>
+</html>

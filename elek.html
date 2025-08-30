@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Elek</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: hidden;
+        }
+        
+        .img-background {
+            background-image: url('img/backgnd4.png');
+            height: 1080px;
+            width: 1920px;
+            scale: 105%;
+            margin-top: -135px;
+            background-size: cover;
+            background-position: center;
+            position: relative; 
+        }
+
+        .elek-img {
+            position: absolute;
+            top: 100px;
+            left: 730px;
+            width: 100vh;
+            height: 100%;
+            object-fit: cover;
+            scale: 80%;
+        }
+
+        .img-reupload {
+            position: absolute;
+            top: 210px;
+            left: 450px;
+            width: 100vh;
+            cursor: pointer;
+            height: 100%;
+            object-fit: cover;
+            scale: 60%;
+        }
+
+        #iconContainer {
+            position: absolute;
+            top: 830px; 
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1px;
+            padding: 0;
+        }
+        
+        header {
+            position: fixed;
+            margin-left: 8.5px;
+            margin-top: 155px;
+            width: 95.8%;
+            scale: 90%;
+            background: #000000b6;
+            color: #ff0000;
+            padding: 1rem 2rem;
+            display: flex;
+            border-radius: 1.5rem;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+            transform: translateY(-80%);
+        }
+
+        header:hover {
+            transform: translateY(1px);
+        }
+
+        nav a {
+            top: auto;
+            margin-left: 1rem;
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            height: 2px;
+            width: 100%;
+            background: #d8d8d8be;
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #e95959;
+            text-shadow: 0 0 6px #ad4500, 0 0 12px #530000;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        #iconContainer {
+            position: absolute;
+            top: 830px; 
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 34px; 
+            z-index: 10; 
+        }
+
+        #iconContainer img {
+            width: 120px; 
+            height: 120px;
+            cursor: pointer;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="img-background">
+                <header>
+        <img src="img/elek.png" alt="Elek Logo" style="width: 3%; height: 3%; scale: 180%;">
+        <nav>
+            <a href="/elek">start</a>
+            <a href="/ueber-mich">über mich</a>
+            <a href="https://www.dingus.meme">zurück</a>
+        </nav>
+        </header>
+        <div id="iconContainer"></div>
+        <div class="elek-img">
+            <img src="img/lelek.png" alt="Elek Image">
+        </div>
+        <div class="img-reupload">
+            <img src="img/lol.png" alt="lol"  onclick="window.location.href='https://www.youtube.com/playlist?list=PLHscSgZOSSeJ4y511KP0DG2uOjcclfGBQ'">
+        </div>
+    <script>
+        function addIcon(src, alt, url, containerId) {
+            const container = document.getElementById(containerId);
+            if (container) {
+                const icon = document.createElement('img');
+                icon.src = src;
+                icon.alt = alt;
+                icon.style.pointerEvents = "auto";
+                icon.onclick = function() {
+                    window.location.href = url;
+                };
+                container.appendChild(icon);
+            } else {
+                console.error(`Container with id "${containerId}" not found.`);
+            }
+        }
+
+        addIcon('img/youtube.png', 'youtube', 'https://www.youtube.com/channel/UCGCDfh9CI-9B9ZmO8TmtXGQ', 'iconContainer');
+        addIcon('img/twitch.png', 'twitch', 'https://www.twitch.tv/elek_2009', 'iconContainer');
+        addIcon('img/insta.png', 'insta', 'https://www.instagram.com/elek_20.02', 'iconContainer');
+        addIcon('img/dc.png', 'dc', 'https://discord.gg/97h3pkaKyf', 'iconContainer');
+        addIcon('img/tiktok.png', 'Tiktok', 'https://www.tiktok.com/@elek_20.02', 'iconContainer');
+    </script>
+</body>
+</html>

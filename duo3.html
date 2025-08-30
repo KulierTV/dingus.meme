@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dingus</title>
+    <link rel="icon" href="img/logo.png" />
+    <style>
+    body {
+        display: flex;
+        margin: 0;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+        position: relative;
+        background: linear-gradient(135deg, #080808, #202020, #272727);
+        overflow: hidden;
+    }
+
+        .glowing-circle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                background: rgba(255, 255, 255, 0.2);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.2), 0 0 40px rgba(255, 255, 255, 0.1), 0 0 60px rgba(255, 255, 255, 0.05);
+            }
+            to {
+                background: rgba(255, 255, 255, 0.4);
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), 0 0 80px rgba(255, 255, 255, 0.3), 0 0 120px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        .channel {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .channel::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+        }
+
+        img.profile-pic {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        img.profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        .pushable {
+            background: hsl(0, 0%, 38%);
+            border-radius: 12px;
+            border: none;
+            padding: 0;
+            box-shadow: 0 8px 15px rgba(71, 71, 71, 0.582);
+            cursor: pointer;
+            outline-offset: 4px;
+            overflow: hidden;
+            position: relative;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .front {
+            display: block;
+            padding: 12px 42px;
+            border-radius: 16px;
+            font-size: 1.25rem;
+            background: hsl(0, 0%, 38%);
+            color: rgb(255, 255, 255);
+            transform: translateY(-6px);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .pushable::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(188, 196, 201, 0.6), transparent);
+            transform: skewX(-30deg);
+            transition: transform 0.3s ease;
+            z-index: 1;
+        }
+
+        .pushable.clicked::before {
+            animation: shine 0.6s forwards;
+        }
+
+        .pushable.clicked .front {
+            background-color: #797979;
+        }
+
+        .pushable:active .front {
+            transform: translateY(-2px);
+            background-color: #858585;
+        }
+
+        @keyframes shine {
+            0% { left: -50%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="channel left">
+        <div class="background-image"></div>
+        <div class="content">
+            <img src="img/logo.png" alt="Kulier Profile Picture" class="profile-pic">
+            <h2>Kulier</h2>
+            <button class="pushable" onclick="handleClick(this, 'https://kulier.lol')">
+                <span class="front">Visit Kulier</span>
+            </button>
+        </div>
+    </div>
+    <div class="channel right">
+        <div class="background-image"></div>
+        <div class="content">
+            <img src="elek_img/logo.png" alt="Elek Profile Picture" class="profile-pic">
+            <h2>Elek</h2>
+            <button class="pushable" onclick="handleClick(this, 'https://dingus.meme/elek')">
+                <span class="front">Visit Elek</span>
+            </button>
+        </div>
+    </div>
+    <script>
+        function handleClick(button, url) {
+            button.classList.add('clicked');
+            setTimeout(() => {
+                window.location.href = url;
+            }, 600);
+        }
+
+        function createGlowingCircle() {
+            const circle = document.createElement('div');
+            circle.classList.add('glowing-circle');
+            const size = Math.random() * 15 + 7; 
+            circle.style.width = `${size}px`;
+            circle.style.height = `${size}px`;
+            circle.style.top = `${Math.random() * 100}vh`;
+            circle.style.left = `${Math.random() * 100}vw`;
+            document.body.appendChild(circle);
+        }
+
+        for (let i = 0; i < 35; i++) {
+            createGlowingCircle();
+        }
+    </script>
+</body>
+</html>
